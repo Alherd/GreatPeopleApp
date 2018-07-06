@@ -1,16 +1,11 @@
 package com.alherd.greatpeopleapp.activities;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.support.v4.widget.SimpleCursorAdapter;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Button;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.alherd.greatpeopleapp.R;
@@ -22,11 +17,6 @@ import java.io.InputStream;
 public class GreatManDescriptionActivity extends AppCompatActivity {
     DatabaseHelper mDatabaseHelper;
     DatabaseHelperMethods mDatabaseHelperMethods;
-    SimpleCursorAdapter userAdapter;
-    ListView userListDoctor;
-    SQLiteDatabase db;
-    Cursor userCursor;
-    Button button_1;
     ImageView photoPeople;
     TextView descriptionPeople;
     String namePeople;

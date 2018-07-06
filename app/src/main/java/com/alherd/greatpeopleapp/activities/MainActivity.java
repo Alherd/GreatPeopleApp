@@ -8,7 +8,6 @@ import android.widget.Button;
 
 import com.alherd.greatpeopleapp.R;
 import com.alherd.greatpeopleapp.database.DatabaseHelper;
-import com.alherd.greatpeopleapp.model.KeyValues;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         artistsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                KeyValues.sProfession = "writer";
                 startActivity(intent);
             }
         });
@@ -53,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
         scientistsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                KeyValues.sProfession = scientistsButton.getText().toString().toLowerCase();
                 startActivity(intent);
             }
         });
@@ -61,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         sportsmenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                KeyValues.sProfession = sportsmenButton.getText().toString().toLowerCase();
                 startActivity(intent);
             }
         });
@@ -69,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
         politicsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                KeyValues.sProfession = politicsButton.getText().toString().toLowerCase();
                 startActivity(intent);
             }
         });
@@ -77,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
         singersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                KeyValues.sProfession = singersButton.getText().toString().toLowerCase();
                 startActivity(intent);
             }
         });

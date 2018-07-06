@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -14,7 +13,6 @@ import android.widget.TextView;
 
 import com.alherd.greatpeopleapp.R;
 import com.alherd.greatpeopleapp.database.DatabaseHelper;
-import com.alherd.greatpeopleapp.model.KeyValues;
 
 public class PeopleListActivity extends AppCompatActivity {
     ListView userList;
@@ -38,7 +36,7 @@ public class PeopleListActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         profession = intent.getStringExtra(MainActivity.PROFESSION);
-        country = intent.getStringExtra(SelectCountryActivity.COUNTRY);
+        country = intent.getStringExtra("R");
     }
 
     @Override
@@ -47,12 +45,11 @@ public class PeopleListActivity extends AppCompatActivity {
         db = mDatabaseHelper.getReadableDatabase();
         userCursor = db.rawQuery("select _id_people as _id, * from " + DatabaseHelper.TABLE_PEOPLE + " where "
                 + DatabaseHelper.COLUMN_PROFESSION_PEOPLE + " == '" + profession
-                + "' AND " + DatabaseHelper.COLUMN_COUNTRY_PEOPLE + " == '" + country
+                + "' AND " + DatabaseHelper.COLUMN_CONCRETE_PROFY_PEOPLE + " == '" + country
                 + "' ;", null);
         String[] headers1 = new String[]{DatabaseHelper.COLUMN_NAME_PEOPLE};
         userAdapter = new SimpleCursorAdapter(this, R.layout.one_line_list_item,
                 userCursor, headers1, new int[]{R.id.text1_1_1}, 0);
-        userList.setAdapter(userAdapter);
         userList.setAdapter(userAdapter);
         userList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
