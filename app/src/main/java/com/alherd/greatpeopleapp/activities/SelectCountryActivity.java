@@ -1,7 +1,9 @@
-package com.alherd.greatpeopleapp;
+package com.alherd.greatpeopleapp.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.alherd.greatpeopleapp.R;
 
 public class SelectCountryActivity extends AppCompatActivity {
 
