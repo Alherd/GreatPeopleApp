@@ -7,6 +7,8 @@ import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -51,6 +53,18 @@ public class PeopleListActivity extends AppCompatActivity {
         userAdapter = new SimpleCursorAdapter(this, R.layout.one_line_list_item,
                 userCursor, headers1, new int[]{R.id.text1_1_1}, 0);
         userList.setAdapter(userAdapter);
+        userList.setAdapter(userAdapter);
+        userList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                Intent intent = new Intent(PeopleListActivity.this, GreatManDescriptionActivity.class);
+                TextView textView = (TextView) v.findViewById(R.id.text1_1_1);
+                String name = textView.getText().toString();
+                intent.putExtra(DatabaseHelper.NAME_MAN, name);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

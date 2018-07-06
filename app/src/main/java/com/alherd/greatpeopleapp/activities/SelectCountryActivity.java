@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.alherd.greatpeopleapp.R;
-import com.alherd.greatpeopleapp.model.KeyValues;
+import com.alherd.greatpeopleapp.database.DatabaseHelper;
 
 public class SelectCountryActivity extends AppCompatActivity {
     Button russiaButton;
@@ -31,7 +31,7 @@ public class SelectCountryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SelectCountryActivity.this, PeopleListActivity.class);
-                intent.putExtra(COUNTRY,"Russia");
+                intent.putExtra(COUNTRY, DatabaseHelper.COUNTRY_RUSSIA);
                 intent.putExtra(MainActivity.PROFESSION, profession);
                 startActivity(intent);
             }

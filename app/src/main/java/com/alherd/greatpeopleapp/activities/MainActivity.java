@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.alherd.greatpeopleapp.R;
+import com.alherd.greatpeopleapp.database.DatabaseHelper;
 import com.alherd.greatpeopleapp.model.KeyValues;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         writersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra(PROFESSION,"writer");
+                intent.putExtra(PROFESSION, DatabaseHelper.PROFESSION_WRITER);
                 startActivity(intent);
             }
         });
