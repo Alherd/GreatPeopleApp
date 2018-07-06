@@ -37,7 +37,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL("INSERT INTO " + TABLE_PEOPLE + " (" + COLUMN_PROFESSION_PEOPLE
                 + ", " + COLUMN_COUNTRY_PEOPLE + ", " + COLUMN_NAME_PEOPLE
-                + ", " + COLUMN_PHOTO_PEOPLE + ", " + COLUMN_DESCRIPTION_PEOPLE + ") VALUES ('писатель', 'Россия', 'Пушкин Александр Сергеевич', 'photo', 'Родился...')," +
+                + ", " + COLUMN_PHOTO_PEOPLE + ", " + COLUMN_DESCRIPTION_PEOPLE + ") VALUES ('writer', 'russia', 'Пушкин Александр Сергеевич', 'photo', 'Родился...')," +
                 "('художник','Италия', 'Леонардо Да Винчи','photo','Родился...');");
 
     }

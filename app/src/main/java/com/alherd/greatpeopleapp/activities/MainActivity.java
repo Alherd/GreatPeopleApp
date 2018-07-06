@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.alherd.greatpeopleapp.R;
+import com.alherd.greatpeopleapp.model.KeyValues;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     Button sportsmenButton;
     Button politicsButton;
     Button singersButton;
+    public final static String PROFESSION = "PROFESSION";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +31,12 @@ public class MainActivity extends AppCompatActivity {
         politicsButton = (Button) findViewById(R.id.polititions_button);
         singersButton = (Button) findViewById(R.id.singers_button);
 
+        final Intent intent = new Intent(MainActivity.this, SelectCountryActivity.class);
+
         writersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SelectCountryActivity.class);
+                intent.putExtra(PROFESSION,"writer");
                 startActivity(intent);
             }
         });
@@ -40,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         artistsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SelectCountryActivity.class);
+                KeyValues.sProfession = "writer";
                 startActivity(intent);
             }
         });
@@ -48,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         scientistsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SelectCountryActivity.class);
+                KeyValues.sProfession = scientistsButton.getText().toString().toLowerCase();
                 startActivity(intent);
             }
         });
@@ -56,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         sportsmenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SelectCountryActivity.class);
+                KeyValues.sProfession = sportsmenButton.getText().toString().toLowerCase();
                 startActivity(intent);
             }
         });
@@ -64,14 +68,15 @@ public class MainActivity extends AppCompatActivity {
         politicsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                KeyValues.sProfession = politicsButton.getText().toString().toLowerCase();
+                startActivity(intent);
             }
         });
 
         singersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SelectCountryActivity.class);
+                KeyValues.sProfession = singersButton.getText().toString().toLowerCase();
                 startActivity(intent);
             }
         });
