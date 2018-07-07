@@ -3,9 +3,9 @@ package com.alherd.greatpeopleapp.activities;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -35,8 +35,7 @@ public class PeopleListActivity extends AppCompatActivity {
         mDatabaseHelper = new DatabaseHelper(this);
 
         Intent intent = getIntent();
-        profession = intent.getStringExtra(MainActivity.PROFESSION);
-        country = intent.getStringExtra("R");
+        profession = intent.getStringExtra(DatabaseHelper.PROFESSION);
     }
 
     @Override
@@ -44,8 +43,7 @@ public class PeopleListActivity extends AppCompatActivity {
         super.onResume();
         db = mDatabaseHelper.getReadableDatabase();
         userCursor = db.rawQuery("select _id_people as _id, * from " + DatabaseHelper.TABLE_PEOPLE + " where "
-                + DatabaseHelper.COLUMN_PROFESSION_PEOPLE + " == '" + profession
-                + "' AND " + DatabaseHelper.COLUMN_CONCRETE_PROFY_PEOPLE + " == '" + country
+                + DatabaseHelper.COLUMN_CONCRETE_PROFY_PEOPLE + " == '" + profession
                 + "' ;", null);
         String[] headers1 = new String[]{DatabaseHelper.COLUMN_NAME_PEOPLE};
         userAdapter = new SimpleCursorAdapter(this, R.layout.one_line_list_item,

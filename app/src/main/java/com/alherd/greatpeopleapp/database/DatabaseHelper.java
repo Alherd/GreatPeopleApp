@@ -20,8 +20,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_PHOTO_PEOPLE = "photo_people";
     public static final String COLUMN_DESCRIPTION_PEOPLE = "description_people";
 
+    public static final String PROFESSION = "profession";
     public static final String PROFESSION_WRITER = "writer";
-    public static final String COUNTRY_RUSSIA = "Поэзия";
+    public static final String CONCRETE_PROFESSION_POET = "Поэзия";
     public static final String NAME_MAN = "NAME";
 
     public DatabaseHelper(Context context) {
@@ -41,8 +42,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL("INSERT INTO " + TABLE_PEOPLE + " (" + COLUMN_PROFESSION_PEOPLE
                 + ", " + COLUMN_CONCRETE_PROFY_PEOPLE + ", " + COLUMN_NAME_PEOPLE
-                + ", " + COLUMN_PHOTO_PEOPLE + ", " + COLUMN_DESCRIPTION_PEOPLE + ") VALUES ('" + PROFESSION_WRITER + "', '" + COUNTRY_RUSSIA + "', 'Пушкин Александр Сергеевич', 'res/drawable/pushkin.jpg', 'Родился...')," +
-                "('художник','Италия', 'Леонардо Да Винчи','photo','Родился...');");
+                + ", " + COLUMN_PHOTO_PEOPLE + ", " + COLUMN_DESCRIPTION_PEOPLE + ") VALUES ('" + PROFESSION_WRITER + "', '" + CONCRETE_PROFESSION_POET + "', 'Пушкин Александр Сергеевич', 'res/drawable/pushkin.jpg', 'Родился...')," +
+                "('"+PROFESSION_WRITER+"','Италия', 'Леонардо Да Винчи','photo','Родился...');");
     }
 
     @Override

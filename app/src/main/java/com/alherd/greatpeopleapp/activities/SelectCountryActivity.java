@@ -3,12 +3,11 @@ package com.alherd.greatpeopleapp.activities;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -31,7 +30,7 @@ public class SelectCountryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_select_country);
         final Intent intent = getIntent();
 
-        profession = intent.getStringExtra(MainActivity.PROFESSION);
+        profession = intent.getStringExtra(DatabaseHelper.PROFESSION);
         mDatabaseHelper = new DatabaseHelper(getApplicationContext());
         mDatabaseHelper = new DatabaseHelper(this);
         userList = (ListView) findViewById(R.id.list_people);
@@ -41,7 +40,7 @@ public class SelectCountryActivity extends AppCompatActivity {
 //            @Override
 //            public void onClick(View v) {
 //                Intent intent = new Intent(SelectCountryActivity.this, PeopleListActivity.class);
-//                intent.putExtra(COUNTRY, DatabaseHelper.COUNTRY_RUSSIA);
+//                intent.putExtra(COUNTRY, DatabaseHelper.CONCRETE_PROFESSION_POET);
 //                intent.putExtra(MainActivity.PROFESSION, profession);
 //                startActivity(intent);
 //            }
@@ -63,10 +62,10 @@ public class SelectCountryActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                Intent intent = new Intent(SelectCountryActivity.this, GreatManDescriptionActivity.class);
+                Intent intent = new Intent(SelectCountryActivity.this, PeopleListActivity.class);
                 TextView textView = (TextView) v.findViewById(R.id.text1_1_1);
                 String name = textView.getText().toString();
-                intent.putExtra(DatabaseHelper.NAME_MAN, name);
+                intent.putExtra(DatabaseHelper.PROFESSION, name);
                 startActivity(intent);
             }
         });
