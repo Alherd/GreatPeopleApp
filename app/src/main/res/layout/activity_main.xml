@@ -1,91 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activities.MainActivity">
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/pushkin"
+            tools:context=".activities.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/choose_category_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Выберите категорию"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Великие люди"
+            android:textColor="#FFFFFF"
+            android:textSize="50dp"/>
 
         <Button
             android:id="@+id/writers_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/choose_category_textview"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_below="@id/choose_category_textview"
+            android:layout_marginTop="15dp"
             android:padding="10dp"
             android:text="Писатели"
-            android:textSize="30dp" />
+            android:textSize="30dp"/>
 
         <Button
             android:id="@+id/artists_button"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/writers_button"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/writers_button"
             android:padding="10dp"
             android:text="Художники"
-            android:textSize="30dp" />
+            android:textSize="30dp"/>
 
         <Button
             android:id="@+id/scientists_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/artists_button"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_below="@id/artists_button"
             android:padding="10dp"
             android:text="Ученые"
-            android:textSize="30dp" />
+            android:textSize="30dp"/>
 
         <Button
             android:id="@+id/sportsmen_button"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/scientists_button"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/scientists_button"
             android:padding="10dp"
             android:text="Спортсмены"
-            android:textSize="30dp" />
+            android:textSize="30dp"/>
 
         <Button
             android:id="@+id/polititions_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/sportsmen_button"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_below="@id/sportsmen_button"
             android:padding="10dp"
             android:text="Политики"
-            android:textSize="30dp" />
+            android:textSize="30dp"/>
 
         <Button
             android:id="@+id/singers_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/polititions_button"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_below="@id/polititions_button"
             android:padding="10dp"
             android:text="Певцы"
-            android:textSize="30dp" />
+            android:textSize="30dp"/>
     </RelativeLayout>
 </ScrollView>

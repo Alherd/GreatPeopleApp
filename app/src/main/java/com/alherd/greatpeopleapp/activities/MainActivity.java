@@ -7,10 +7,10 @@ import android.view.View;
 import android.widget.Button;
 
 import com.alherd.greatpeopleapp.R;
+import com.alherd.greatpeopleapp.constants.StringConstants;
 import com.alherd.greatpeopleapp.database.DatabaseHelper;
 
 public class MainActivity extends AppCompatActivity {
-
     Button writersButton;
     Button artistsButton;
     Button scientistsButton;
@@ -30,12 +30,13 @@ public class MainActivity extends AppCompatActivity {
         politicsButton = (Button) findViewById(R.id.polititions_button);
         singersButton = (Button) findViewById(R.id.singers_button);
 
-        final Intent intent = new Intent(MainActivity.this, SelectCountryActivity.class);
+        final Intent intent = new Intent(MainActivity.this, SelectProfessionActivity.class);
 
         writersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_WRITER);
+                intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/writers.jpg");
                 startActivity(intent);
             }
         });
