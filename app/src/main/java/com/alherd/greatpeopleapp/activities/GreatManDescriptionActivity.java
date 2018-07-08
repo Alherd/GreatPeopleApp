@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,8 +16,15 @@ import com.alherd.greatpeopleapp.R;
 import com.alherd.greatpeopleapp.database.DatabaseHelper;
 import com.alherd.greatpeopleapp.database.DatabaseHelperMethods;
 import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdLoader;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.NativeExpressAdView;
+import com.google.android.gms.ads.formats.NativeAdOptions;
+import com.google.android.gms.ads.formats.NativeAppInstallAd;
+import com.google.android.gms.ads.formats.NativeContentAd;
+import com.google.android.gms.ads.formats.NativeContentAdView;
 
 import java.io.InputStream;
 
@@ -26,8 +34,6 @@ public class GreatManDescriptionActivity extends AppCompatActivity {
     ImageView photoPeople;
     TextView descriptionPeople;
     String namePeople;
-    private InterstitialAd mInterstitialAd;
-    Button mButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +41,6 @@ public class GreatManDescriptionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_great_man_description);
         photoPeople = (ImageView) findViewById(R.id.photo_doctor);
         descriptionPeople = (TextView) findViewById(R.id.description_textview);
-
-        mButton = (Button) findViewById(R.id.but);
 
 
         mDatabaseHelper = new DatabaseHelper(getApplicationContext());
@@ -51,20 +55,5 @@ public class GreatManDescriptionActivity extends AppCompatActivity {
         photoPeople.setImageBitmap(bm);
 
         descriptionPeople.setText(mDatabaseHelperMethods.getDescription(namePeople));
-
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-//        mButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (mInterstitialAd.isLoaded()) {
-//                    mInterstitialAd.show();
-//                } else {
-//                    Log.d("TAG", "The interstitial wasn't loaded yet.");
-//                }
-//            }
-//        });
-
     }
 }
