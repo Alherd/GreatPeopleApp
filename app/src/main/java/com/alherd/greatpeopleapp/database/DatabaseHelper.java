@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.alherd.greatpeopleapp.R;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final int VERSION = 1;
@@ -47,7 +49,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL("INSERT INTO " + TABLE_PEOPLE + " (" + COLUMN_PROFESSION_PEOPLE
                 + ", " + COLUMN_CONCRETE_PROFY_PEOPLE + ", " + COLUMN_NAME_PEOPLE
-                + ", " + COLUMN_PHOTO_PEOPLE + ", " + COLUMN_DESCRIPTION_PEOPLE + ") VALUES ('" + PROFESSION_WRITER + "', '" + CONCRETE_PROFESSION_POET + "', 'Пушкин Александр Сергеевич', 'res/drawable/pushkin.jpg', 'Родился...')," +
+                + ", " + COLUMN_PHOTO_PEOPLE + ", " + COLUMN_DESCRIPTION_PEOPLE + ") VALUES " +
+                "('" + PROFESSION_WRITER + "', '" + CONCRETE_PROFESSION_POET + "', 'Пушкин Александр Сергеевич', 'res/drawable/pushkin.jpg', 'Алекса́ндр Серге́евич Пу́шкин (26 мая [6 июня] 1799, Москва — 29 января [10 февраля] 1837, Санкт-Петербург) — русский поэт, драматург и прозаик, заложивший основы русского реалистического направления, критик и теоретик литературы, историк, публицист; один из самых авторитетных литературных деятелей первой трети XIX века. Ещё при жизни Пушкина сложилась его репутация величайшего национального русского поэта. Пушкин рассматривается как основоположник современного русского литературного языка.')," +
                 "('"+PROFESSION_WRITER+"','Италия', 'Леонардо Да Винчи','photo','Родился...');");
     }
 

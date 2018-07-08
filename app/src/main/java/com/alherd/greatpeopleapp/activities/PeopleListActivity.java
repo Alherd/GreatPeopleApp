@@ -74,8 +74,8 @@ public class PeopleListActivity extends AppCompatActivity {
                 TextView textView = (TextView) v.findViewById(R.id.text1_1_1);
                 String name = textView.getText().toString();
                 intent.putExtra(DatabaseHelper.NAME_MAN, name);
-
                 startActivity(intent);
+
                 if (mInterstitialAd.isLoaded()) {
                     mInterstitialAd.show();
                 } else {
