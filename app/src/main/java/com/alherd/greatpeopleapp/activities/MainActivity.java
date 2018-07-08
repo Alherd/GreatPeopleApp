@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         artistsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_ARTIST);
+                intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/artist.jpg");
                 startActivity(intent);
             }
         });
@@ -51,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
         scientistsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_SCIENTIST);
+                intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/scientist.jpg");
                 startActivity(intent);
             }
         });
@@ -58,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
         sportsmenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_SPORTSMAN);
+                intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/sportsman.png");
                 startActivity(intent);
             }
         });
@@ -65,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
         politicsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_POLITICIAN);
+                intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/politician.jpg");
                 startActivity(intent);
             }
         });
@@ -72,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
         singersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_SINGER);
+                intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/singer.jpg");
                 startActivity(intent);
             }
         });

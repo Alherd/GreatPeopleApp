@@ -22,6 +22,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String PROFESSION = "profession";
     public static final String PROFESSION_WRITER = "writer";
+    public static final String PROFESSION_ARTIST = "artist";
+    public static final String PROFESSION_SCIENTIST = "scientist";
+    public static final String PROFESSION_SPORTSMAN = "sportsman";
+    public static final String PROFESSION_POLITICIAN = "politician";
+    public static final String PROFESSION_SINGER = "singer";
     public static final String CONCRETE_PROFESSION_POET = "Поэзия";
     public static final String NAME_MAN = "NAME";
 
