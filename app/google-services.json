@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "904641798218",
+    "firebase_url": "https://greatpeopleapp-f6928.firebaseio.com",
+    "project_id": "greatpeopleapp-f6928",
+    "storage_bucket": "greatpeopleapp-f6928.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:904641798218:android:a5ef34c7137fbffc",
+        "android_client_info": {
+          "package_name": "com.alherd.greatpeopleapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "904641798218-u1p9sjsc2m7e8iihi06njojrb1589ad2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alherd.greatpeopleapp",
+            "certificate_hash": "c8a2181a69ed3e382487e2fbd0d7ef5d1dd8f292"
+          }
+        },
+        {
+          "client_id": "904641798218-cma96aferth1dqsven67ebmt08j0pqi1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMxcgtFofBsL8vQ6N7QMbQOAJh_xFn7QY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "904641798218-cma96aferth1dqsven67ebmt08j0pqi1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
