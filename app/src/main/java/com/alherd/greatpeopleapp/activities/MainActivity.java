@@ -9,6 +9,7 @@ import android.widget.Button;
 import com.alherd.greatpeopleapp.R;
 import com.alherd.greatpeopleapp.constants.StringConstants;
 import com.alherd.greatpeopleapp.database.DatabaseHelper;
+import com.google.android.gms.ads.MobileAds;
 
 public class MainActivity extends AppCompatActivity {
     Button writersButton;

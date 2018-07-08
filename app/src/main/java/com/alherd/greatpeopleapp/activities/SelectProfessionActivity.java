@@ -18,6 +18,9 @@ import com.alherd.greatpeopleapp.R;
 import com.alherd.greatpeopleapp.constants.StringConstants;
 import com.alherd.greatpeopleapp.database.DatabaseHelper;
 import com.alherd.greatpeopleapp.database.DatabaseHelperMethods;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 import java.io.InputStream;
 
@@ -33,12 +36,14 @@ public class SelectProfessionActivity extends AppCompatActivity {
     DatabaseHelperMethods mDatabaseHelperMethods;
     ImageView mImageView;
     String imagePath;
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_profession);
         final Intent intent = getIntent();
+//        MobileAds.initialize(this, "ca-app-pub-7248798470579066~6127475603");
 
         profession = intent.getStringExtra(DatabaseHelper.PROFESSION);
         imagePath = intent.getStringExtra(StringConstants.IMAGE_PATH);
@@ -53,6 +58,9 @@ public class SelectProfessionActivity extends AppCompatActivity {
         Bitmap bm = BitmapFactory.decodeStream(is);
         mImageView.setImageBitmap(bm);
 
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
     @Override

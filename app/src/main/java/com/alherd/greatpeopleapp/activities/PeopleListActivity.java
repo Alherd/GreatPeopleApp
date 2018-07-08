@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -13,6 +14,9 @@ import android.widget.TextView;
 
 import com.alherd.greatpeopleapp.R;
 import com.alherd.greatpeopleapp.database.DatabaseHelper;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 
 public class PeopleListActivity extends AppCompatActivity {
     ListView userList;
@@ -23,6 +27,7 @@ public class PeopleListActivity extends AppCompatActivity {
     SimpleCursorAdapter userAdapter;
     String profession;
     String country;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +41,18 @@ public class PeopleListActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         profession = intent.getStringExtra(DatabaseHelper.PROFESSION);
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                mInterstitialAd.loadAd(new AdRequest.Builder().build());
+            }
+
+        });
     }
 
     @Override
@@ -57,6 +74,11 @@ public class PeopleListActivity extends AppCompatActivity {
                 TextView textView = (TextView) v.findViewById(R.id.text1_1_1);
                 String name = textView.getText().toString();
                 intent.putExtra(DatabaseHelper.NAME_MAN, name);
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    Log.d("TAG", "The interstitial wasn't loaded yet.");
+                }
                 startActivity(intent);
             }
         });
