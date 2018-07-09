@@ -23,7 +23,7 @@ import com.google.android.gms.ads.AdView;
 
 import java.io.InputStream;
 
-public class SelectProfessionActivity extends AppCompatActivity {
+public final class SelectProfessionActivity extends AppCompatActivity {
     ListView userList;
     TextView header;
     DatabaseHelper mDatabaseHelper;

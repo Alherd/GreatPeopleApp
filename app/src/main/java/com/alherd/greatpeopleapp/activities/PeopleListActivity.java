@@ -18,7 +18,7 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 
-public class PeopleListActivity extends AppCompatActivity {
+public final class PeopleListActivity extends AppCompatActivity {
     ListView userList;
     TextView header;
     DatabaseHelper mDatabaseHelper;

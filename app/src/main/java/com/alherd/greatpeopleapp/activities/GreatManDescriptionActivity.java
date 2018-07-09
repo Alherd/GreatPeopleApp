@@ -16,7 +16,7 @@ import com.google.android.gms.ads.AdView;
 
 import java.io.InputStream;
 
-public class GreatManDescriptionActivity extends AppCompatActivity {
+public final class GreatManDescriptionActivity extends AppCompatActivity {
     DatabaseHelper mDatabaseHelper;
     DatabaseHelperMethods mDatabaseHelperMethods;
     ImageView photoPeople;

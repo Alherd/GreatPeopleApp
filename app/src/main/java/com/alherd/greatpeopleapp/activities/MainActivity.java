@@ -14,7 +14,7 @@ import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 
-public class MainActivity extends AppCompatActivity implements RewardedVideoAdListener {
+public final class MainActivity extends AppCompatActivity implements RewardedVideoAdListener {
     Button writersButton;
     Button artistsButton;
     Button scientistsButton;
