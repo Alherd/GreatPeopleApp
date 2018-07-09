@@ -37,12 +37,8 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
         sportsmenButton = (Button) findViewById(R.id.sportsmen_button);
         politicsButton = (Button) findViewById(R.id.polititions_button);
         singersButton = (Button) findViewById(R.id.singers_button);
-        MobileAds.initialize(this, "ca-app-pub-7248798470579066~6127475603");
 
-        final Intent intent = new Intent(MainActivity.this, SelectProfessionActivity.class);
-        if (isLoad) {
-            startActivity(intent);
-        }
+
         mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
         mRewardedVideoAd.setRewardedVideoAdListener(this);
         mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build());
@@ -54,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
                     isLoad = true;
                     mRewardedVideoAd.show();
                 } else {
+                    final Intent intent = new Intent(MainActivity.this, SelectProfessionActivity.class);
                     intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_WRITER);
                     intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/writers.jpg");
                     startActivity(intent);
@@ -64,45 +61,75 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
         artistsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_ARTIST);
-                intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/artist.jpg");
-                startActivity(intent);
+                if (mRewardedVideoAd.isLoaded()) {
+                    isLoad = true;
+                    mRewardedVideoAd.show();
+                } else {
+                    final Intent intent = new Intent(MainActivity.this, SelectProfessionActivity.class);
+                    intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_ARTIST);
+                    intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/artist.jpg");
+                    startActivity(intent);
+                }
             }
         });
 
         scientistsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_SCIENTIST);
-                intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/scientist.jpg");
-                startActivity(intent);
+                if (mRewardedVideoAd.isLoaded()) {
+                    isLoad = true;
+                    mRewardedVideoAd.show();
+                } else {
+                    final Intent intent = new Intent(MainActivity.this, SelectProfessionActivity.class);
+                    intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_SCIENTIST);
+                    intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/scientist.jpg");
+                    startActivity(intent);
+                }
             }
         });
 
         sportsmenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_SPORTSMAN);
-                intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/sportsman.png");
-                startActivity(intent);
+                if (mRewardedVideoAd.isLoaded()) {
+                    isLoad = true;
+                    mRewardedVideoAd.show();
+                } else {
+                    final Intent intent = new Intent(MainActivity.this, SelectProfessionActivity.class);
+                    intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_SPORTSMAN);
+                    intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/sportsman.png");
+                    startActivity(intent);
+                }
             }
         });
 
         politicsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_POLITICIAN);
-                intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/politician.jpg");
-                startActivity(intent);
+                if (mRewardedVideoAd.isLoaded()) {
+                    isLoad = true;
+                    mRewardedVideoAd.show();
+                } else {
+                    final Intent intent = new Intent(MainActivity.this, SelectProfessionActivity.class);
+                    intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_POLITICIAN);
+                    intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/politician.jpg");
+                    startActivity(intent);
+                }
             }
         });
 
         singersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_SINGER);
-                intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/singer.jpg");
-                startActivity(intent);
+                if (mRewardedVideoAd.isLoaded()) {
+                    isLoad = true;
+                    mRewardedVideoAd.show();
+                } else {
+                    final Intent intent = new Intent(MainActivity.this, SelectProfessionActivity.class);
+                    intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_SINGER);
+                    intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/singer.jpg");
+                    startActivity(intent);
+                }
             }
         });
     }

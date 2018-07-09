@@ -67,9 +67,9 @@ public class SelectProfessionActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
         db = mDatabaseHelper.getReadableDatabase();
-        userCursor = db.rawQuery("select DISTINCT _id_people as _id, * from " + DatabaseHelper.TABLE_PEOPLE + " where "
+        userCursor = db.rawQuery("select _id_people as _id, * from " + DatabaseHelper.TABLE_PEOPLE + " where "
                 + DatabaseHelper.COLUMN_PROFESSION_PEOPLE + " == '" + profession
-                + "';", null);
+                + "'GROUP BY concrete_profy_people;", null);
         String[] headers1 = new String[]{DatabaseHelper.COLUMN_CONCRETE_PROFY_PEOPLE};
         userAdapter = new SimpleCursorAdapter(this, R.layout.one_line_list_item,
                 userCursor, headers1, new int[]{R.id.text1_1_1}, 0);
