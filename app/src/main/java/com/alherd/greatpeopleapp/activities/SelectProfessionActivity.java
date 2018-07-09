@@ -15,12 +15,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.alherd.greatpeopleapp.R;
-import com.alherd.greatpeopleapp.constants.StringConstants;
 import com.alherd.greatpeopleapp.database.DatabaseHelper;
 import com.alherd.greatpeopleapp.database.DatabaseHelperMethods;
+import com.alherd.greatpeopleapp.interfaces.IStringConstants;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 
 import java.io.InputStream;
 
@@ -46,7 +45,7 @@ public class SelectProfessionActivity extends AppCompatActivity {
 //        MobileAds.initialize(this, "ca-app-pub-7248798470579066~6127475603");
 
         profession = intent.getStringExtra(DatabaseHelper.PROFESSION);
-        imagePath = intent.getStringExtra(StringConstants.IMAGE_PATH);
+        imagePath = intent.getStringExtra(IStringConstants.IMAGE_PATH);
         mDatabaseHelper = new DatabaseHelper(getApplicationContext());
         mDatabaseHelper = new DatabaseHelper(this);
         mDatabaseHelperMethods = new DatabaseHelperMethods(getApplicationContext());
@@ -70,7 +69,7 @@ public class SelectProfessionActivity extends AppCompatActivity {
         userCursor = db.rawQuery("select _id_people as _id, * from " + DatabaseHelper.TABLE_PEOPLE + " where "
                 + DatabaseHelper.COLUMN_PROFESSION_PEOPLE + " == '" + profession
                 + "'GROUP BY concrete_profy_people;", null);
-        String[] headers1 = new String[]{DatabaseHelper.COLUMN_CONCRETE_PROFY_PEOPLE};
+        String[] headers1 = new String[]{DatabaseHelper.COLUMN_CONCRETE_PROFESSION_PEOPLE};
         userAdapter = new SimpleCursorAdapter(this, R.layout.one_line_list_item,
                 userCursor, headers1, new int[]{R.id.text1_1_1}, 0);
         userList.setAdapter(userAdapter);

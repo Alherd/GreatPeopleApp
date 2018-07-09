@@ -5,10 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.alherd.greatpeopleapp.R;
-import com.alherd.greatpeopleapp.constants.StringConstants;
 import com.alherd.greatpeopleapp.database.DatabaseHelper;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
@@ -52,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
                 } else {
                     final Intent intent = new Intent(MainActivity.this, SelectProfessionActivity.class);
                     intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_WRITER);
-                    intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/writers.jpg");
+                    intent.putExtra(DatabaseHelper.IMAGE_PATH, "res/drawable/writers.jpg");
                     startActivity(intent);
                 }
             }
@@ -67,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
                 } else {
                     final Intent intent = new Intent(MainActivity.this, SelectProfessionActivity.class);
                     intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_ARTIST);
-                    intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/artist.jpg");
+                    intent.putExtra(DatabaseHelper.IMAGE_PATH, "res/drawable/artist.jpg");
                     startActivity(intent);
                 }
             }
@@ -82,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
                 } else {
                     final Intent intent = new Intent(MainActivity.this, SelectProfessionActivity.class);
                     intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_SCIENTIST);
-                    intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/scientist.jpg");
+                    intent.putExtra(DatabaseHelper.IMAGE_PATH, "res/drawable/scientist.jpg");
                     startActivity(intent);
                 }
             }
@@ -97,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
                 } else {
                     final Intent intent = new Intent(MainActivity.this, SelectProfessionActivity.class);
                     intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_SPORTSMAN);
-                    intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/sportsman.png");
+                    intent.putExtra(DatabaseHelper.IMAGE_PATH, "res/drawable/sportsman.png");
                     startActivity(intent);
                 }
             }
@@ -112,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
                 } else {
                     final Intent intent = new Intent(MainActivity.this, SelectProfessionActivity.class);
                     intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_POLITICIAN);
-                    intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/politician.jpg");
+                    intent.putExtra(DatabaseHelper.IMAGE_PATH, "res/drawable/politician.jpg");
                     startActivity(intent);
                 }
             }
@@ -127,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
                 } else {
                     final Intent intent = new Intent(MainActivity.this, SelectProfessionActivity.class);
                     intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_SINGER);
-                    intent.putExtra(StringConstants.IMAGE_PATH, "res/drawable/singer.jpg");
+                    intent.putExtra(DatabaseHelper.IMAGE_PATH, "res/drawable/singer.jpg");
                     startActivity(intent);
                 }
             }
@@ -136,7 +134,6 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
 
     @Override
     public void onRewardedVideoAdLoaded() {
-        Toast.makeText(this, "Ready", Toast.LENGTH_SHORT).show();
     }
 
     @Override

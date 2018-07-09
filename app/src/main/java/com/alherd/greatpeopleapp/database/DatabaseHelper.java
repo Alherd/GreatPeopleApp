@@ -4,44 +4,12 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+import com.alherd.greatpeopleapp.interfaces.IDatabaseTableGreatPeople;
+import com.alherd.greatpeopleapp.interfaces.IStringConstants;
 
-    public static final int VERSION = 1;
-    public static final String DATABASE_NAME = "clinicBase.db";
-
-    /**
-     * Таблица GREAT_PEOPLE
-     */
-    public static final String TABLE_PEOPLE = "people";
-    public static final String COLUMN_ID_PEOPLE = "_id_people";
-    public static final String COLUMN_PROFESSION_PEOPLE = "profession_people";
-    public static final String COLUMN_CONCRETE_PROFY_PEOPLE = "concrete_profy_people";
-    public static final String COLUMN_NAME_PEOPLE = "name_people";
-    public static final String COLUMN_PHOTO_PEOPLE = "photo_people";
-    public static final String COLUMN_DESCRIPTION_PEOPLE = "description_people";
-
-    public static final String NAME_MAN = "NAME";
-    public static final String PROFESSION = "profession";
-    public static final String PROFESSION_WRITER = "writer";
-    public static final String PROFESSION_ARTIST = "artist";
-    public static final String PROFESSION_SCIENTIST = "scientist";
-    public static final String PROFESSION_SPORTSMAN = "sportsman";
-    public static final String PROFESSION_POLITICIAN = "politician";
-    public static final String PROFESSION_SINGER = "singer";
-    public static final String CONCRETE_PROFESSION_WRITER_POET = "Поэзия";
-    public static final String CONCRETE_PROFESSION_WRITER_PROSE = "Проза";
-    public static final String CONCRETE_PROFESSION_ARTIST_ABSTRACTIONISM = "Абстракционизм";
-    public static final String CONCRETE_PROFESSION_ARTIST_AVANT_GARDISM = "Авангардизм";
-    public static final String CONCRETE_PROFESSION_SCIENTIST_MATHEMATICIAN = "Математика";
-    public static final String CONCRETE_PROFESSION_SCIENTIST_PHYSICIAN = "Физика";
-    public static final String CONCRETE_PROFESSION_SPORTSMAN_FOOTBALL = "Футбол";
-    public static final String CONCRETE_PROFESSION_SPORTSMAN_HOCKEY = "Хоккей";
-    public static final String CONCRETE_PROFESSION_POLITICIAN_PRESIDENT = "Президент";
-    public static final String CONCRETE_PROFESSION_POLITICIAN_REVOLUTIONER = "Революционер";
-    public static final String CONCRETE_PROFESSION_POLITICIAN_KING = "Король";
-    public static final String CONCRETE_PROFESSION_SINGER_GROUP = "Группа";
-    public static final String CONCRETE_PROFESSION_SINGER_SOLO = "Соло";
-
+public class DatabaseHelper extends SQLiteOpenHelper implements IDatabaseTableGreatPeople, IStringConstants {
+    private static final int VERSION = 1;
+    private static final String DATABASE_NAME = "clinicBase.db";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, VERSION);
@@ -53,13 +21,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + " (" + COLUMN_ID_PEOPLE
                 + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + COLUMN_PROFESSION_PEOPLE + " TEXT, "
-                + COLUMN_CONCRETE_PROFY_PEOPLE + " TEXT, "
+                + COLUMN_CONCRETE_PROFESSION_PEOPLE + " TEXT, "
                 + COLUMN_NAME_PEOPLE + " TEXT, "
                 + COLUMN_PHOTO_PEOPLE + " TEXT, "
                 + COLUMN_DESCRIPTION_PEOPLE + " TEXT);");
 
         db.execSQL("INSERT INTO " + TABLE_PEOPLE + " (" + COLUMN_PROFESSION_PEOPLE
-                + ", " + COLUMN_CONCRETE_PROFY_PEOPLE + ", " + COLUMN_NAME_PEOPLE
+                + ", " + COLUMN_CONCRETE_PROFESSION_PEOPLE + ", " + COLUMN_NAME_PEOPLE
                 + ", " + COLUMN_PHOTO_PEOPLE + ", " + COLUMN_DESCRIPTION_PEOPLE + ") VALUES " +
                 "('" + PROFESSION_WRITER + "', '" + CONCRETE_PROFESSION_WRITER_POET + "', 'Пушкин Александр Сергеевич', 'res/drawable/pushkin.jpg', 'Алекса́ндр Серге́евич Пу́шкин (26 мая [6 июня] 1799, Москва — 29 января [10 февраля] 1837, Санкт-Петербург) — русский поэт, драматург и прозаик, заложивший основы русского реалистического направления, критик и теоретик литературы, историк, публицист; один из самых авторитетных литературных деятелей первой трети XIX века. Ещё при жизни Пушкина сложилась его репутация величайшего национального русского поэта. Пушкин рассматривается как основоположник современного русского литературного языка.')," +
                 "('" + PROFESSION_WRITER + "', '" + CONCRETE_PROFESSION_WRITER_PROSE + "', 'Лев Николаевич Толстой', 'res/drawable/lev.jpg', 'Граф Лев Никола́евич Толстой (28 августа [9 сентября] 1828, Ясная Поляна, Тульская губерния, Российская империя — 7 [20] ноября 1910, станция Астапово, Рязанская губерния, Российская империя) — один из наиболее известных русских писателей и мыслителей, один из величайших писателей-романистов мира. Участник обороны Севастополя. Просветитель, публицист, религиозный мыслитель, его авторитетное мнение послужило причиной возникновения нового религиозно-нравственного течения — толстовства. Член-корреспондент Императорской Академии наук (1873), почётный академик по разряду изящной словесности (1900). Был номинирован на Нобелевскую премию по литературе (1902, 1903, 1904, 1905).')," +

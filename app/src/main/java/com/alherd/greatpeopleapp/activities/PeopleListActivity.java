@@ -60,7 +60,7 @@ public class PeopleListActivity extends AppCompatActivity {
         super.onResume();
         db = mDatabaseHelper.getReadableDatabase();
         userCursor = db.rawQuery("select _id_people as _id, * from " + DatabaseHelper.TABLE_PEOPLE + " where "
-                + DatabaseHelper.COLUMN_CONCRETE_PROFY_PEOPLE + " == '" + profession
+                + DatabaseHelper.COLUMN_CONCRETE_PROFESSION_PEOPLE + " == '" + profession
                 + "' ;", null);
         String[] headers1 = new String[]{DatabaseHelper.COLUMN_NAME_PEOPLE};
         userAdapter = new SimpleCursorAdapter(this, R.layout.one_line_list_item,
