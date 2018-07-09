@@ -127,6 +127,7 @@ public final class MainActivity extends AppCompatActivity implements RewardedVid
 
     @Override
     public void onRewardedVideoAdLoaded() {
+
     }
 
     @Override

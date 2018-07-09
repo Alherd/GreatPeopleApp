@@ -31,18 +31,16 @@ public final class SelectProfessionActivity extends AppCompatActivity {
     Cursor userCursor;
     SimpleCursorAdapter userAdapter;
     String profession;
-    String country;
     DatabaseHelperMethods mDatabaseHelperMethods;
     ImageView mImageView;
     String imagePath;
-    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_profession);
-        final Intent intent = getIntent();
 
+        final Intent intent = getIntent();
         profession = intent.getStringExtra(DatabaseHelper.PROFESSION);
         imagePath = intent.getStringExtra(IStringConstants.IMAGE_PATH);
         mDatabaseHelper = new DatabaseHelper(getApplicationContext());
@@ -50,15 +48,17 @@ public final class SelectProfessionActivity extends AppCompatActivity {
         mDatabaseHelperMethods = new DatabaseHelperMethods(getApplicationContext());
         mDatabaseHelperMethods = new DatabaseHelperMethods(this);
 
+        header = (TextView) findViewById(R.id.header_map);
         userList = (ListView) findViewById(R.id.list_people);
         mImageView = (ImageView) findViewById(R.id.image_profession);
+
         InputStream is = getClass().getClassLoader().getResourceAsStream(imagePath);
         Bitmap bm = BitmapFactory.decodeStream(is);
         mImageView.setImageBitmap(bm);
 
-        mAdView = (AdView) findViewById(R.id.adView);
+        AdView adView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        adView.loadAd(adRequest);
     }
 
     @Override

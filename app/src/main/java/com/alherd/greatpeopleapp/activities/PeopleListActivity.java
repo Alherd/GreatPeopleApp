@@ -38,6 +38,7 @@ public final class PeopleListActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         profession = intent.getStringExtra(DatabaseHelper.PROFESSION);
+        header.setText(profession);
 
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId(getString(R.string.adUnitId));
