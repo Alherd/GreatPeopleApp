@@ -42,7 +42,6 @@ public final class SelectProfessionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_profession);
         final Intent intent = getIntent();
-//        MobileAds.initialize(this, "ca-app-pub-7248798470579066~6127475603");
 
         profession = intent.getStringExtra(DatabaseHelper.PROFESSION);
         imagePath = intent.getStringExtra(IStringConstants.IMAGE_PATH);
@@ -68,7 +67,7 @@ public final class SelectProfessionActivity extends AppCompatActivity {
         db = mDatabaseHelper.getReadableDatabase();
         userCursor = db.rawQuery("select _id_people as _id, * from " + DatabaseHelper.TABLE_PEOPLE + " where "
                 + DatabaseHelper.COLUMN_PROFESSION_PEOPLE + " == '" + profession
-                + "'GROUP BY concrete_profy_people;", null);
+                + "'GROUP BY concrete_profile_people;", null);
         String[] headers1 = new String[]{DatabaseHelper.COLUMN_CONCRETE_PROFESSION_PEOPLE};
         userAdapter = new SimpleCursorAdapter(this, R.layout.one_line_list_item,
                 userCursor, headers1, new int[]{R.id.text1_1_1}, 0);
@@ -84,5 +83,12 @@ public final class SelectProfessionActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        db.close();
+        userCursor.close();
     }
 }

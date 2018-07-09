@@ -22,7 +22,6 @@ public final class MainActivity extends AppCompatActivity implements RewardedVid
     Button politicsButton;
     Button singersButton;
     private RewardedVideoAd mRewardedVideoAd;
-    boolean isLoad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,18 +38,17 @@ public final class MainActivity extends AppCompatActivity implements RewardedVid
 
         mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
         mRewardedVideoAd.setRewardedVideoAdListener(this);
-        mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build());
+        mRewardedVideoAd.loadAd(getString(R.string.unitId), new AdRequest.Builder().build());
 
         writersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mRewardedVideoAd.isLoaded()) {
-                    isLoad = true;
                     mRewardedVideoAd.show();
                 } else {
                     final Intent intent = new Intent(MainActivity.this, SelectProfessionActivity.class);
                     intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_WRITER);
-                    intent.putExtra(DatabaseHelper.IMAGE_PATH, "res/drawable/writers.jpg");
+                    intent.putExtra(DatabaseHelper.IMAGE_PATH, getString(R.string.path_writers));
                     startActivity(intent);
                 }
             }
@@ -60,12 +58,11 @@ public final class MainActivity extends AppCompatActivity implements RewardedVid
             @Override
             public void onClick(View v) {
                 if (mRewardedVideoAd.isLoaded()) {
-                    isLoad = true;
                     mRewardedVideoAd.show();
                 } else {
                     final Intent intent = new Intent(MainActivity.this, SelectProfessionActivity.class);
                     intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_ARTIST);
-                    intent.putExtra(DatabaseHelper.IMAGE_PATH, "res/drawable/artist.jpg");
+                    intent.putExtra(DatabaseHelper.IMAGE_PATH, getString(R.string.path_artists));
                     startActivity(intent);
                 }
             }
@@ -75,12 +72,11 @@ public final class MainActivity extends AppCompatActivity implements RewardedVid
             @Override
             public void onClick(View v) {
                 if (mRewardedVideoAd.isLoaded()) {
-                    isLoad = true;
                     mRewardedVideoAd.show();
                 } else {
                     final Intent intent = new Intent(MainActivity.this, SelectProfessionActivity.class);
                     intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_SCIENTIST);
-                    intent.putExtra(DatabaseHelper.IMAGE_PATH, "res/drawable/scientist.jpg");
+                    intent.putExtra(DatabaseHelper.IMAGE_PATH, getString(R.string.path_scientists));
                     startActivity(intent);
                 }
             }
@@ -90,12 +86,11 @@ public final class MainActivity extends AppCompatActivity implements RewardedVid
             @Override
             public void onClick(View v) {
                 if (mRewardedVideoAd.isLoaded()) {
-                    isLoad = true;
                     mRewardedVideoAd.show();
                 } else {
                     final Intent intent = new Intent(MainActivity.this, SelectProfessionActivity.class);
                     intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_SPORTSMAN);
-                    intent.putExtra(DatabaseHelper.IMAGE_PATH, "res/drawable/sportsman.png");
+                    intent.putExtra(DatabaseHelper.IMAGE_PATH, getString(R.string.path_sportsman));
                     startActivity(intent);
                 }
             }
@@ -105,12 +100,11 @@ public final class MainActivity extends AppCompatActivity implements RewardedVid
             @Override
             public void onClick(View v) {
                 if (mRewardedVideoAd.isLoaded()) {
-                    isLoad = true;
                     mRewardedVideoAd.show();
                 } else {
                     final Intent intent = new Intent(MainActivity.this, SelectProfessionActivity.class);
                     intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_POLITICIAN);
-                    intent.putExtra(DatabaseHelper.IMAGE_PATH, "res/drawable/politician.jpg");
+                    intent.putExtra(DatabaseHelper.IMAGE_PATH, getString(R.string.path_politician));
                     startActivity(intent);
                 }
             }
@@ -120,12 +114,11 @@ public final class MainActivity extends AppCompatActivity implements RewardedVid
             @Override
             public void onClick(View v) {
                 if (mRewardedVideoAd.isLoaded()) {
-                    isLoad = true;
                     mRewardedVideoAd.show();
                 } else {
                     final Intent intent = new Intent(MainActivity.this, SelectProfessionActivity.class);
                     intent.putExtra(DatabaseHelper.PROFESSION, DatabaseHelper.PROFESSION_SINGER);
-                    intent.putExtra(DatabaseHelper.IMAGE_PATH, "res/drawable/singer.jpg");
+                    intent.putExtra(DatabaseHelper.IMAGE_PATH, getString(R.string.path_singers));
                     startActivity(intent);
                 }
             }

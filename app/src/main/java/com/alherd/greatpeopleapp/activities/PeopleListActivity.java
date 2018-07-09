@@ -19,14 +19,11 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 
 public final class PeopleListActivity extends AppCompatActivity {
-    ListView userList;
-    TextView header;
-    DatabaseHelper mDatabaseHelper;
-    SQLiteDatabase db;
-    Cursor userCursor;
-    SimpleCursorAdapter userAdapter;
-    String profession;
-    String country;
+    private ListView userList;
+    private DatabaseHelper mDatabaseHelper;
+    private SQLiteDatabase db;
+    private Cursor userCursor;
+    private String profession;
     private InterstitialAd mInterstitialAd;
 
     @Override
@@ -34,7 +31,7 @@ public final class PeopleListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_people_list);
 
-        header = (TextView) findViewById(R.id.header_map);
+        TextView header = (TextView) findViewById(R.id.header_map);
         userList = (ListView) findViewById(R.id.list_people);
         mDatabaseHelper = new DatabaseHelper(getApplicationContext());
         mDatabaseHelper = new DatabaseHelper(this);
@@ -43,7 +40,7 @@ public final class PeopleListActivity extends AppCompatActivity {
         profession = intent.getStringExtra(DatabaseHelper.PROFESSION);
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId(getString(R.string.adUnitId));
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
         mInterstitialAd.setAdListener(new AdListener() {
@@ -63,7 +60,7 @@ public final class PeopleListActivity extends AppCompatActivity {
                 + DatabaseHelper.COLUMN_CONCRETE_PROFESSION_PEOPLE + " == '" + profession
                 + "' ;", null);
         String[] headers1 = new String[]{DatabaseHelper.COLUMN_NAME_PEOPLE};
-        userAdapter = new SimpleCursorAdapter(this, R.layout.one_line_list_item,
+        SimpleCursorAdapter userAdapter = new SimpleCursorAdapter(this, R.layout.one_line_list_item,
                 userCursor, headers1, new int[]{R.id.text1_1_1}, 0);
         userList.setAdapter(userAdapter);
         userList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -79,7 +76,7 @@ public final class PeopleListActivity extends AppCompatActivity {
                 if (mInterstitialAd.isLoaded()) {
                     mInterstitialAd.show();
                 } else {
-                    Log.d("TAG", "The interstitial wasn't loaded yet.");
+                    Log.d(getString(R.string.TAG), getString(R.string.interstitial_wasnt_loaded));
                 }
             }
         });
@@ -88,7 +85,6 @@ public final class PeopleListActivity extends AppCompatActivity {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        // Закрываем подключение и курсор
         db.close();
         userCursor.close();
     }

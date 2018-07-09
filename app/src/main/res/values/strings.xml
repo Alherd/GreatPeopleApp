@@ -1,5 +1,21 @@
 <resources>
     <string name="app_name">Great People</string>
     <string name="banner_ad_unit_id">ca-app-pub-7248798470579066~6127475603</string>
-    <string name="pushkin_description">Алекса́ндр Серге́евич Пу́шкин (26 мая [6 июня] 1799, Москва — 29 января [10 февраля] 1837, Санкт-Петербург) — русский поэт, драматург и прозаик, заложивший основы русского реалистического направления[7], критик и теоретик литературы, историк, публицист; один из самых авторитетных литературных деятелей первой трети XIX века.Ещё при жизни Пушкина сложилась его репутация величайшего национального русского поэта[8][9]. Пушкин рассматривается как основоположник современного русского литературного языка[~ 1].</string>
+    <string name="great_people">Великие люди</string>
+    <string name="writers">Писатели</string>
+    <string name="artists">Художники</string>
+    <string name="scientists">Ученые</string>
+    <string name="sportsmen">Спортсмены</string>
+    <string name="politicians">Политики</string>
+    <string name="singers">Певцы</string>
+    <string name="unitId">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="adUnitId">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="interstitial_wasnt_loaded">The interstitial wasn\'t loaded yet.</string>
+    <string name="TAG">TAG</string>
+    <string name="path_writers">res/drawable/writers.jpg</string>
+    <string name="path_artists">res/drawable/artist.jpg</string>
+    <string name="path_scientists">res/drawable/scientist.jpg</string>
+    <string name="path_sportsman">res/drawable/sportsman.png</string>
+    <string name="path_politician">res/drawable/politician.jpg</string>
+    <string name="path_singers">res/drawable/singer.jpg</string>
 </resources>

@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Великие люди"
+            android:text="@string/great_people"
             android:textColor="#FFFFFF"
             android:textSize="50dp"/>
 
@@ -32,7 +32,7 @@
             android:layout_marginTop="15dp"
             android:background="#B3F0F083"
             android:padding="10dp"
-            android:text="Писатели"
+            android:text="@string/writers"
             android:textSize="30dp"/>
 
         <Button
@@ -45,7 +45,7 @@
             android:layout_marginRight="20dp"
             android:background="#B3F0F083"
             android:padding="10dp"
-            android:text="Художники"
+            android:text="@string/artists"
             android:textSize="30dp"/>
 
         <Button
@@ -58,7 +58,7 @@
             android:layout_marginRight="20dp"
             android:background="#B3F0F083"
             android:padding="10dp"
-            android:text="Ученые"
+            android:text="@string/scientists"
             android:textSize="30dp"/>
 
         <Button
@@ -71,7 +71,7 @@
             android:layout_marginRight="20dp"
             android:background="#B3F0F083"
             android:padding="10dp"
-            android:text="Спортсмены"
+            android:text="@string/sportsmen"
             android:textSize="30dp"/>
 
         <Button
@@ -84,7 +84,7 @@
             android:layout_marginRight="20dp"
             android:background="#B3F0F083"
             android:padding="10dp"
-            android:text="Политики"
+            android:text="@string/politicians"
             android:textSize="30dp"/>
 
         <Button
@@ -97,7 +97,7 @@
             android:layout_marginRight="20dp"
             android:background="#B3F0F083"
             android:padding="10dp"
-            android:text="Певцы"
+            android:text="@string/singers"
             android:textSize="30dp"/>
     </RelativeLayout>
 </ScrollView>
